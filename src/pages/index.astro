@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import hero from "../content/hero.json";
+import pricing from "../content/pricing.json";
 ---
 
 <BaseLayout title="Nail Studio | Manichiură Profesională">
@@ -159,71 +160,37 @@ import hero from "../content/hero.json";
         <section id="pricing" class="py-5" style="background:#eeedec; scroll-margin-top:100px;">
             <div class="container">
                 <div class="text-center mb-5">
-                    <h2 class="fw-semibold" style="font-size:2.5rem; color:#090825;">Prețuri Corecte & Transparență</h2>
-                    <p class="text-secondary mx-auto" style="max-width: 650px;">
-                        Alege serviciul potrivit pentru tine și bucură-te de un rezultat impecabil.
-                    </p>
+                    <h2 style="font-size:2.5rem; color:#090825;">
+                        {pricing.sectionTitle}
+                    </h2>
+                    <p>{pricing.sectionDescription}</p>
                 </div>
 
                 <div class="row g-4">
-                    <div class="col-12 col-lg-4">
-                        <div class="h-100 p-4 rounded-4 text-white" style="background:#090825;">
-                            <div class="d-flex align-items-center gap-3 pb-3 mb-4" style="border-bottom:1px solid rgba(255,255,255,0.12);">
-                                <span class="material-symbols-outlined" style="font-size:2.5rem;">front_hand</span>
-                                <h3 class="h5 fw-semibold m-0">Manichiură & Îngrijire</h3>
-                            </div>
-
-                            <ul class="list-unstyled m-0">
-                                <li class="d-flex justify-content-between mb-3"><span>Clasică (ojă)</span><span class="fw-semibold">150 lei</span></li>
-                                <li class="d-flex justify-content-between mb-3"><span>Manichiură aparat</span><span class="fw-semibold">150 lei</span></li>
-                                <li class="d-flex justify-content-between mb-3"><span>Manichiură igienică</span><span class="fw-semibold">150 lei</span></li>
-                                <li class="d-flex justify-content-between mb-3"><span>Pentru bărbați</span><span class="fw-semibold">180 lei</span></li>
-                                <li class="d-flex justify-content-between mb-3"><span>Parafinoterapie</span><span class="fw-semibold">100 lei</span></li>
-                                <li class="d-flex justify-content-between"><span>Mini-SPA mâini</span><span class="fw-semibold">25 lei</span></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-lg-4">
-                        <div class="h-100 p-4 rounded-4 text-white" style="background:#6475E9;">
-                            <div class="d-flex align-items-center gap-3 pb-3 mb-4" style="border-bottom:1px solid rgba(255,255,255,0.18);">
-                                <span class="material-symbols-outlined" style="font-size:2.5rem;">palette</span>
-                                <h3 class="h5 fw-semibold m-0">Acoperire & Stil</h3>
-                            </div>
-
-                            <ul class="list-unstyled m-0">
-                                <li class="d-flex justify-content-between mb-3"><span>Acoperire ojă-gel</span><span class="fw-semibold">200 lei</span></li>
-                                <li class="d-flex justify-content-between mb-3"><span>Acoperire gel</span><span class="fw-semibold">280 lei</span></li>
-                                <li class="d-flex justify-content-between mb-3"><span>Corecție ojă-gel</span><span class="fw-semibold">220 lei</span></li>
-                                <li class="d-flex justify-content-between mb-3"><span>Corecție gel (+igienică)</span><span class="fw-semibold">400 lei</span></li>
-                                <li class="d-flex justify-content-between mb-3"><span>Corecție gel (fără ig.)</span><span class="fw-semibold">330 lei</span></li>
-                                <li class="d-flex justify-content-between mb-3"><span>Art-Design / Restaurare</span><span class="fw-semibold">30–50 lei</span></li>
-                                <li class="d-flex justify-content-between"><span>Îndepărtare gel</span><span class="fw-semibold">70 lei</span></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-lg-4">
-                        <div class="h-100 p-4 rounded-4 text-white" style="background:#ff7956;">
-                            <div class="d-flex align-items-center gap-3 pb-3 mb-4" style="border-bottom:1px solid rgba(255,255,255,0.18);">
-                                <span class="material-symbols-outlined" style="font-size:2.5rem;">architecture</span>
-                                <h3 class="h5 fw-semibold m-0">Alungire Unghii</h3>
-                            </div>
-
-                            <ul class="list-unstyled m-0">
-                                <li class="d-flex justify-content-between mb-3"><span>Mărimea 1 & 2</span><span class="fw-semibold">350 lei</span></li>
-                                <li class="d-flex justify-content-between mb-3"><span>Mărimea 3</span><span class="fw-semibold">400 lei</span></li>
-                                <li class="d-flex justify-content-between mb-3"><span>Mărimea 4</span><span class="fw-semibold">450 lei</span></li>
-                                <li class="d-flex justify-content-between mb-3"><span>Mărimea 5</span><span class="fw-semibold">500 lei</span></li>
-                                <li class="mt-4 pt-3" style="border-top:1px solid rgba(255,255,255,0.18); opacity:0.85; font-style:italic;">
-                                    <div class="d-flex justify-content-between">
-                                        <span>Calitate Premium</span><span class="fw-semibold">Inclusă</span>
+                    {pricing.categories.map((category) => (
+                            <div class="col-12 col-lg-4">
+                                <div class="h-100 p-4 rounded-4 text-white"
+                                     style={`background:${category.color};`}>
+                                    <div class="d-flex align-items-center gap-3 pb-3 mb-4"
+                                         style="border-bottom:1px solid rgba(255,255,255,0.18);">
+                                      <span class="material-symbols-outlined"
+                                              style="font-size:2.5rem;">
+                                        {category.icon}
+                                      </span>
+                                        <h3 class="h5 fw-semibold m-0">{category.title}</h3>
                                     </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
 
+                                    <ul class="list-unstyled m-0">
+                                        {category.services.map((service) => (
+                                                <li class="d-flex justify-content-between mb-3">
+                                                    <span>{service.name}</span>
+                                                    <span class="fw-semibold">{service.price}</span>
+                                                </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+                    ))}
                 </div>
             </div>
         </section>
