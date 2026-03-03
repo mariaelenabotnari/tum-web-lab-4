@@ -1,0 +1,14 @@
+{
+  "navLinks": [
+    { "label": "Servicii", "href": "#features" },
+    { "label": "Lucrări", "href": "#portfolio" },
+    { "label": "Prețuri", "href": "#pricing" }
+  ],
+  "ctaText": "Programează-te",
+  "phoneNumber": "078949090",
+
+  "mobileCall": {
+    "text": "Sună acum",
+    "iconClass": "fa-solid fa-phone"
+  }
+}

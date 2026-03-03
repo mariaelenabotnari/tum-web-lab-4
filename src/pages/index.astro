@@ -5,12 +5,14 @@ import pricing from "../content/pricing.json";
 import features from "../content/features.json";
 import gallery from "../content/gallery.json";
 import footer from "../content/footer.json";
+import header from "../content/header.json";
+import mobileHighlights from "../content/mobileHighlights.json";
 ---
 
 <BaseLayout title="Nail Studio | Manichiură Profesională">
-    <a href="tel:078949090" class="mobile-call-btn">
-        <i class="fa-solid fa-phone"></i>
-        Sună acum
+    <a href={`tel:${header.phoneNumber}`} class="mobile-call-btn">
+        <i class={header.mobileCall.iconClass}></i>
+        {header.mobileCall.text}
     </a>
 
     <header>
@@ -18,17 +20,22 @@ import footer from "../content/footer.json";
             <div class="container nav-mobile-row">
 
                 <a class="navbar-brand" href="#">
-                    <img src="img/logo.png" class="logo-img" alt="Your Perfect Nails">
+                    <img src="/img/logo.png" class="logo-img" alt="Your Perfect Nails" />
                 </a>
 
                 <ul class="nav-links nav-mobile-links">
-                    <li class="nav-item"><a class="nav-link" href="#features">Servicii</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Lucrări</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#pricing">Prețuri</a></li>
+                    {header.navLinks.map((link) => (
+                            <li class="nav-item">
+                                <a class="nav-link" href={link.href}>{link.label}</a>
+                            </li>
+                    ))}
                 </ul>
 
-                <a class="btn btn-primary nav-book-btn" href="tel:078949090">
-                    Programează-te
+                <a
+                        class="btn btn-primary nav-book-btn"
+                        href={`tel:${header.phoneNumber}`}
+                >
+                    {header.ctaText}
                 </a>
 
             </div>
@@ -70,18 +77,14 @@ import footer from "../content/footer.json";
         <section class="mobile-only-highlights">
             <div class="container">
                 <div class="mhi-card">
-                    <div class="mhi-item">
-                        <span class="material-symbols-outlined">verified</span>
-                        <p>Rezistență 3+ săpt.</p>
-                    </div>
-                    <div class="mhi-item">
-                        <span class="material-symbols-outlined">auto_awesome</span>
-                        <p>Design personalizat</p>
-                    </div>
-                    <div class="mhi-item">
-                        <span class="material-symbols-outlined">spa</span>
-                        <p>Răsfăț & relaxare</p>
-                    </div>
+                    {mobileHighlights.items.map((item) => (
+                            <div class="mhi-item">
+                                <span class="material-symbols-outlined">
+                                    {item.icon}
+                                </span>
+                                <p>{item.text}</p>
+                            </div>
+                    ))}
                 </div>
             </div>
         </section>
