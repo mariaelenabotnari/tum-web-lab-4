@@ -35,8 +35,13 @@ import hero from "../content/hero.json";
         <section class="hero">
             <div class="container hero-container">
                 <div class="hero-text">
-                    <h1>Frumusețe și stil <br> până la <span class="material-symbols-outlined accent-icon">favorite</span> perfecțiune</h1>
-                    <p>Manichiură profesională, design-uri creative și răsfăț total.</p>
+                    <h1>
+                        {hero.titleLine1} <br />
+                        {hero.titleLine2}
+                        <span class="material-symbols-outlined accent-icon">favorite</span>
+                        {hero.titleLine3}
+                    </h1>
+                    <p>{hero.description}</p>
                 </div>
 
                 <div class="search-container">
