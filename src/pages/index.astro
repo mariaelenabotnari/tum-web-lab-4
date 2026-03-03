@@ -1,12 +1,19 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import hero from "../content/hero.json";
+import pricing from "../content/pricing.json";
+import features from "../content/features.json";
+import gallery from "../content/gallery.json";
+import footer from "../content/footer.json";
+import header from "../content/header.json";
+import mobileHighlights from "../content/mobileHighlights.json";
+import overlays from "../content/overlays.json";
 ---
 
 <BaseLayout title="Nail Studio | Manichiură Profesională">
-    <a href="tel:078949090" class="mobile-call-btn">
-        <i class="fa-solid fa-phone"></i>
-        Sună acum
+    <a href={`tel:${header.phoneNumber}`} class="mobile-call-btn">
+        <i class={header.mobileCall.iconClass}></i>
+        {header.mobileCall.text}
     </a>
 
     <header>
@@ -14,17 +21,22 @@ import hero from "../content/hero.json";
             <div class="container nav-mobile-row">
 
                 <a class="navbar-brand" href="#">
-                    <img src="img/logo.png" class="logo-img" alt="Your Perfect Nails">
+                    <img src={header.brand.logoSrc} class="logo-img" alt={header.brand.logoAlt} />
                 </a>
 
                 <ul class="nav-links nav-mobile-links">
-                    <li class="nav-item"><a class="nav-link" href="#features">Servicii</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Lucrări</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#pricing">Prețuri</a></li>
+                    {header.navLinks.map((link) => (
+                            <li class="nav-item">
+                                <a class="nav-link" href={link.href}>{link.label}</a>
+                            </li>
+                    ))}
                 </ul>
 
-                <a class="btn btn-primary nav-book-btn" href="tel:078949090">
-                    Programează-te
+                <a
+                        class="btn btn-primary nav-book-btn"
+                        href={`tel:${header.phoneNumber}`}
+                >
+                    {header.ctaText}
                 </a>
 
             </div>
@@ -35,23 +47,30 @@ import hero from "../content/hero.json";
         <section class="hero">
             <div class="container hero-container">
                 <div class="hero-text">
-                    <h1>Frumusețe și stil <br> până la <span class="material-symbols-outlined accent-icon">favorite</span> perfecțiune</h1>
-                    <p>Manichiură profesională, design-uri creative și răsfăț total.</p>
+                    <h1>
+                        {hero.titleLine1} <br />
+                        {hero.titleLine2}
+                        <span class="material-symbols-outlined accent-icon">favorite</span>
+                        {hero.titleLine3}
+                    </h1>
+                    <p>{hero.description}</p>
                 </div>
 
                 <div class="search-container">
                     <div class="hero-discovery-container">
                         <a href="#servicesPopup" class="discovery-btn" onclick="event.preventDefault(); location.hash='servicesPopup';">
                             <span>
-                                Descoperă serviciile noastre şi vezi ce ți se potrivește
-                                <span class="material-symbols-outlined">auto_awesome</span>
+                              {hero.buttonText}
+                                <span class="material-symbols-outlined">
+                                {hero.buttonIcon}
+                              </span>
                             </span>
                         </a>
                     </div>
                 </div>
 
                 <div class="hero-image-wrapper">
-                    <img src="img/hero_section_img.png" alt="Nail Art Preview" class="hero-img">
+                    <img src={hero.image.src} alt={hero.image.alt} class="hero-img" />
                 </div>
             </div>
         </section>
@@ -59,18 +78,14 @@ import hero from "../content/hero.json";
         <section class="mobile-only-highlights">
             <div class="container">
                 <div class="mhi-card">
-                    <div class="mhi-item">
-                        <span class="material-symbols-outlined">verified</span>
-                        <p>Rezistență 3+ săpt.</p>
-                    </div>
-                    <div class="mhi-item">
-                        <span class="material-symbols-outlined">auto_awesome</span>
-                        <p>Design personalizat</p>
-                    </div>
-                    <div class="mhi-item">
-                        <span class="material-symbols-outlined">spa</span>
-                        <p>Răsfăț & relaxare</p>
-                    </div>
+                    {mobileHighlights.items.map((item) => (
+                            <div class="mhi-item">
+                                <span class="material-symbols-outlined">
+                                    {item.icon}
+                                </span>
+                                <p>{item.text}</p>
+                            </div>
+                    ))}
                 </div>
             </div>
         </section>
@@ -78,74 +93,48 @@ import hero from "../content/hero.json";
         <section id="features" class="features">
             <div class="container">
                 <div class="features-header">
-                    <h2>Tot ce ai nevoie pentru unghii perfecte</h2>
-                    <p>De la manichiură clasică la design-uri artistice, fiecare detaliu este realizat cu grijă și pasiune.</p>
+                    <h2>{features.sectionTitle}</h2>
+                    <p>{features.sectionDescription}</p>
                 </div>
 
                 <div class="features-list">
+                    {features.items.map((item) => (
+                            <div class={`feature-card ${item.brandClass}`}>
+                                <div class="feature-text">
+                                    <span class="material-symbols-outlined icon">{item.icon}</span>
+                                    <h3>{item.title}</h3>
+                                    <p>{item.description}</p>
+                                </div>
 
-                    <div class="feature-card brand-red">
-                        <div class="feature-text">
-                            <span class="material-symbols-outlined icon">auto_awesome</span>
-                            <h3>Design-uri personalizate</h3>
-                            <p>Modele unice, adaptate stilului tău, de la minimalist la nail art complex și spectaculos.</p>
-                        </div>
-                        <div class="feature-image-placeholder">
-                            <img src="img/features_1.png" alt="Design creativ" class="feature-img">
-                        </div>
-                    </div>
-
-                    <div class="feature-card brand-blue">
-                        <div class="feature-text">
-                            <span class="material-symbols-outlined icon">verified</span>
-                            <h3>Rezistență și calitate</h3>
-                            <p>Produse premium și tehnici profesionale pentru o manichiură care arată impecabil mult timp.</p>
-                        </div>
-                        <div class="feature-image-placeholder">
-                            <img src="img/features_2.png" alt="Calitate premium" class="feature-img">
-                        </div>
-                    </div>
-
-                    <div class="feature-card brand-pink">
-                        <div class="feature-text">
-                            <span class="material-symbols-outlined icon">spa</span>
-                            <h3>Relaxare totală</h3>
-                            <p>Atmosferă plăcută, cafea, gustări și momente de răsfăț în timp ce ai grijă de tine.</p>
-                        </div>
-                        <div class="feature-image-placeholder">
-                            <img src="img/features_3.png" alt="Relaxare" class="feature-img">
-                        </div>
-                    </div>
-
+                                <div class="feature-image-placeholder">
+                                    <img src={item.image} alt={item.alt} class="feature-img" />
+                                </div>
+                            </div>
+                    ))}
                 </div>
             </div>
         </section>
 
         <section id="portfolio" class="gallery">
-
             <div class="container">
                 <div class="gallery-header">
-                    <h2>Galerie Lucrări</h2>
-                    <p>Descoperă cele mai recente creații</p>
+                    <h2>{gallery.sectionTitle}</h2>
+                    <p>{gallery.sectionDescription}</p>
                 </div>
 
                 <div class="portfolio-container">
                     <div class="portfolio-slider">
-                        <div class="slide" id="slide-1"><img src="img/nails_1.jpg" alt="Nail Art 1"></div>
-                        <div class="slide" id="slide-2"><img src="img/nails_2.jpg" alt="Nail Art 2"></div>
-                        <div class="slide" id="slide-3"><img src="img/nails_3.jpg" alt="Nail Art 3"></div>
-                        <div class="slide" id="slide-4"><img src="img/nails_4.jpg" alt="Nail Art 4"></div>
-                        <div class="slide" id="slide-5"><img src="img/nails_5.jpg" alt="Nail Art 5"></div>
-                        <div class="slide" id="slide-6"><img src="img/nails_6.jpg" alt="Nail Art 6"></div>
+                        {gallery.images.map((img) => (
+                                <div class="slide" id={img.id}>
+                                    <img src={img.src} alt={img.alt} />
+                                </div>
+                        ))}
                     </div>
 
                     <div class="slider-nav">
-                        <a href="#slide-1"></a>
-                        <a href="#slide-2"></a>
-                        <a href="#slide-3"></a>
-                        <a href="#slide-4"></a>
-                        <a href="#slide-5"></a>
-                        <a href="#slide-6"></a>
+                        {gallery.images.map((img) => (
+                                <a href={`#${img.id}`}></a>
+                        ))}
                     </div>
                 </div>
             </div>
@@ -154,71 +143,37 @@ import hero from "../content/hero.json";
         <section id="pricing" class="py-5" style="background:#eeedec; scroll-margin-top:100px;">
             <div class="container">
                 <div class="text-center mb-5">
-                    <h2 class="fw-semibold" style="font-size:2.5rem; color:#090825;">Prețuri Corecte & Transparență</h2>
-                    <p class="text-secondary mx-auto" style="max-width: 650px;">
-                        Alege serviciul potrivit pentru tine și bucură-te de un rezultat impecabil.
-                    </p>
+                    <h2 style="font-size:2.5rem; color:#090825;">
+                        {pricing.sectionTitle}
+                    </h2>
+                    <p>{pricing.sectionDescription}</p>
                 </div>
 
                 <div class="row g-4">
-                    <div class="col-12 col-lg-4">
-                        <div class="h-100 p-4 rounded-4 text-white" style="background:#090825;">
-                            <div class="d-flex align-items-center gap-3 pb-3 mb-4" style="border-bottom:1px solid rgba(255,255,255,0.12);">
-                                <span class="material-symbols-outlined" style="font-size:2.5rem;">front_hand</span>
-                                <h3 class="h5 fw-semibold m-0">Manichiură & Îngrijire</h3>
-                            </div>
-
-                            <ul class="list-unstyled m-0">
-                                <li class="d-flex justify-content-between mb-3"><span>Clasică (ojă)</span><span class="fw-semibold">150 lei</span></li>
-                                <li class="d-flex justify-content-between mb-3"><span>Manichiură aparat</span><span class="fw-semibold">150 lei</span></li>
-                                <li class="d-flex justify-content-between mb-3"><span>Manichiură igienică</span><span class="fw-semibold">150 lei</span></li>
-                                <li class="d-flex justify-content-between mb-3"><span>Pentru bărbați</span><span class="fw-semibold">180 lei</span></li>
-                                <li class="d-flex justify-content-between mb-3"><span>Parafinoterapie</span><span class="fw-semibold">100 lei</span></li>
-                                <li class="d-flex justify-content-between"><span>Mini-SPA mâini</span><span class="fw-semibold">25 lei</span></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-lg-4">
-                        <div class="h-100 p-4 rounded-4 text-white" style="background:#6475E9;">
-                            <div class="d-flex align-items-center gap-3 pb-3 mb-4" style="border-bottom:1px solid rgba(255,255,255,0.18);">
-                                <span class="material-symbols-outlined" style="font-size:2.5rem;">palette</span>
-                                <h3 class="h5 fw-semibold m-0">Acoperire & Stil</h3>
-                            </div>
-
-                            <ul class="list-unstyled m-0">
-                                <li class="d-flex justify-content-between mb-3"><span>Acoperire ojă-gel</span><span class="fw-semibold">200 lei</span></li>
-                                <li class="d-flex justify-content-between mb-3"><span>Acoperire gel</span><span class="fw-semibold">280 lei</span></li>
-                                <li class="d-flex justify-content-between mb-3"><span>Corecție ojă-gel</span><span class="fw-semibold">220 lei</span></li>
-                                <li class="d-flex justify-content-between mb-3"><span>Corecție gel (+igienică)</span><span class="fw-semibold">400 lei</span></li>
-                                <li class="d-flex justify-content-between mb-3"><span>Corecție gel (fără ig.)</span><span class="fw-semibold">330 lei</span></li>
-                                <li class="d-flex justify-content-between mb-3"><span>Art-Design / Restaurare</span><span class="fw-semibold">30–50 lei</span></li>
-                                <li class="d-flex justify-content-between"><span>Îndepărtare gel</span><span class="fw-semibold">70 lei</span></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-lg-4">
-                        <div class="h-100 p-4 rounded-4 text-white" style="background:#ff7956;">
-                            <div class="d-flex align-items-center gap-3 pb-3 mb-4" style="border-bottom:1px solid rgba(255,255,255,0.18);">
-                                <span class="material-symbols-outlined" style="font-size:2.5rem;">architecture</span>
-                                <h3 class="h5 fw-semibold m-0">Alungire Unghii</h3>
-                            </div>
-
-                            <ul class="list-unstyled m-0">
-                                <li class="d-flex justify-content-between mb-3"><span>Mărimea 1 & 2</span><span class="fw-semibold">350 lei</span></li>
-                                <li class="d-flex justify-content-between mb-3"><span>Mărimea 3</span><span class="fw-semibold">400 lei</span></li>
-                                <li class="d-flex justify-content-between mb-3"><span>Mărimea 4</span><span class="fw-semibold">450 lei</span></li>
-                                <li class="d-flex justify-content-between mb-3"><span>Mărimea 5</span><span class="fw-semibold">500 lei</span></li>
-                                <li class="mt-4 pt-3" style="border-top:1px solid rgba(255,255,255,0.18); opacity:0.85; font-style:italic;">
-                                    <div class="d-flex justify-content-between">
-                                        <span>Calitate Premium</span><span class="fw-semibold">Inclusă</span>
+                    {pricing.categories.map((category) => (
+                            <div class="col-12 col-lg-4">
+                                <div class="h-100 p-4 rounded-4 text-white"
+                                     style={`background:${category.color};`}>
+                                    <div class="d-flex align-items-center gap-3 pb-3 mb-4"
+                                         style="border-bottom:1px solid rgba(255,255,255,0.18);">
+                                      <span class="material-symbols-outlined"
+                                              style="font-size:2.5rem;">
+                                        {category.icon}
+                                      </span>
+                                        <h3 class="h5 fw-semibold m-0">{category.title}</h3>
                                     </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
 
+                                    <ul class="list-unstyled m-0">
+                                        {category.services.map((service) => (
+                                                <li class="d-flex justify-content-between mb-3">
+                                                    <span>{service.name}</span>
+                                                    <span class="fw-semibold">{service.price}</span>
+                                                </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+                    ))}
                 </div>
             </div>
         </section>
@@ -227,37 +182,40 @@ import hero from "../content/hero.json";
 
     <footer class="main-footer">
         <div class="container footer-grid">
-
             <div class="footer-column brand-info">
                 <a href="#" class="footer-logo-text">
-                    <img src="img/logo_v2.png" alt="logo">
+                    <img src={footer.logo.src} alt={footer.logo.alt} />
                 </a>
-                <p class="brand-tagline">Frumusețe. Stil. Perfecțiune.</p>
+                <p class="brand-tagline">{footer.tagline}</p>
             </div>
 
             <div class="footer-column">
-                <h4>Navigare</h4>
+                <h4>{footer.navTitle}</h4>
                 <ul class="footer-nav">
-                    <li><a href="#features">Servicii</a></li>
-                    <li><a href="#portfolio">Lucrări</a></li>
-                    <li><a href="#pricing">Prețuri</a></li>
+                    {footer.links.map((link) => (
+                            <li><a href={link.href}>{link.label}</a></li>
+                    ))}
                 </ul>
             </div>
 
             <div class="footer-column">
-                <h4>Programări</h4>
+                <h4>{footer.bookingTitle}</h4>
                 <div class="location-info">
                     <span class="material-symbols-outlined">location_on</span>
-                    <p>Chișinău, Moldova</p>
+                    <p>{footer.location}</p>
                 </div>
-                <a href="#bookingPopup" class="btn-footer btn-book" onclick="event.preventDefault(); location.hash='bookingPopup';">Programează-te</a>
+                <a
+                        href={`tel:${header.phoneNumber}`}
+                        class="btn-footer btn-book"
+                >
+                    {footer.bookingButtonText}
+                </a>
             </div>
-
         </div>
 
         <div class="footer-bottom">
             <div class="container">
-                <p>© 2026 Your Perfect Nails — Toate drepturile rezervate.</p>
+                <p>{footer.copyright}</p>
             </div>
         </div>
     </footer>
@@ -267,13 +225,15 @@ import hero from "../content/hero.json";
             <a href="javascript:history.back()" class="close-btn">&times;</a>
 
             <div class="popup-icon">
-                <span class="material-symbols-outlined">favorite</span>
+                <span class="material-symbols-outlined">{overlays.bookingPopup.icon}</span>
             </div>
-            <h2>Te așteptăm cu drag!</h2>
-            <p>Aștept un apel de la tine pentru a stabili toate detaliile.</p>
-            <a href="tel:078949090" class="phone-number">
+
+            <h2>{overlays.bookingPopup.title}</h2>
+            <p>{overlays.bookingPopup.description}</p>
+
+            <a href={`tel:${overlays.phoneNumber}`} class="phone-number">
                 <span class="material-symbols-outlined">call</span>
-                078949090
+                {overlays.phoneNumber}
             </a>
         </div>
     </div>
@@ -283,25 +243,22 @@ import hero from "../content/hero.json";
             <a href="javascript:history.back()" class="close-btn">&times;</a>
 
             <div class="popup-icon">
-                <span class="material-symbols-outlined">favorite</span>
+                <span class="material-symbols-outlined">{overlays.servicesPopup.icon}</span>
             </div>
 
-            <h2>Serviciile noastre</h2>
+            <h2>{overlays.servicesPopup.title}</h2>
 
             <div class="services-tags-container">
-                <span class="service-tag">Manichiură igienică și îngrijire profesională</span>
-                <span class="service-tag">Aplicare ojă semipermanentă sau gel rezistent</span>
-                <span class="service-tag">Design personalizat și nail art creativ după plac</span>
-                <span class="service-tag">Alungire unghii mărimile 1–5 cu formă perfectă</span>
-                <span class="service-tag">Tratament cu parafină și ritual SPA pentru mâini</span>
-
+                {overlays.servicesPopup.tags.map((tag) => (
+                        <span class="service-tag">{tag}</span>
+                ))}
             </div>
 
             <div class="interest-section">
-                <p>Ți-a stârnit interesul? Programează-te:</p>
-                <a href="tel:078949090" class="phone-number">
+                <p>{overlays.servicesPopup.interestText}</p>
+                <a href={`tel:${overlays.phoneNumber}`} class="phone-number">
                     <span class="material-symbols-outlined">call</span>
-                    078949090
+                    {overlays.phoneNumber}
                 </a>
             </div>
         </div>
@@ -313,13 +270,13 @@ import hero from "../content/hero.json";
         <div class="mascot-card">
 
             <div class="mascot-bubble">
-                Salut! Sunt Mihaela ♡<br>
-                Te aștept cu drag la mine în salon
+                {overlays.mascot.messageLine1}<br />
+                {overlays.mascot.messageLine2}
             </div>
 
             <div class="mascot-clip">
-                <img class="mascot-frame frame-1" src="img/mascot_initial_position.png" alt="">
-                <img class="mascot-frame frame-2" src="img/mascot_second_position.png" alt="">
+                <img class="mascot-frame frame-1" src={overlays.frames.frame1Src} alt={overlays.frames.alt} />
+                <img class="mascot-frame frame-2" src={overlays.frames.frame2Src} alt={overlays.frames.alt} />
             </div>
 
         </div>

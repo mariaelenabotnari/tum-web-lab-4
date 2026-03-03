@@ -1,0 +1,18 @@
+{
+  "tagline": "Frumusețe. Stil. Perfecțiune.",
+  "navTitle": "Navigare",
+  "links": [
+    { "label": "Servicii", "href": "#features" },
+    { "label": "Lucrări", "href": "#portfolio" },
+    { "label": "Prețuri", "href": "#pricing" }
+  ],
+  "bookingTitle": "Programări",
+  "location": "Chișinău, Moldova",
+  "bookingButtonText": "Programează-te",
+  "copyright": "© 2026 Your Perfect Nails — Toate drepturile rezervate.",
+
+  "logo": {
+    "src": "/img/logo_v2.png",
+    "alt": "logo"
+  }
+}
