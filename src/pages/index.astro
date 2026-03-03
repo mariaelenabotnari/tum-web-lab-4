@@ -7,6 +7,7 @@ import gallery from "../content/gallery.json";
 import footer from "../content/footer.json";
 import header from "../content/header.json";
 import mobileHighlights from "../content/mobileHighlights.json";
+import overlays from "../content/overlays.json";
 ---
 
 <BaseLayout title="Nail Studio | Manichiură Profesională">
@@ -225,13 +226,15 @@ import mobileHighlights from "../content/mobileHighlights.json";
             <a href="javascript:history.back()" class="close-btn">&times;</a>
 
             <div class="popup-icon">
-                <span class="material-symbols-outlined">favorite</span>
+                <span class="material-symbols-outlined">{overlays.bookingPopup.icon}</span>
             </div>
-            <h2>Te așteptăm cu drag!</h2>
-            <p>Aștept un apel de la tine pentru a stabili toate detaliile.</p>
-            <a href="tel:078949090" class="phone-number">
+
+            <h2>{overlays.bookingPopup.title}</h2>
+            <p>{overlays.bookingPopup.description}</p>
+
+            <a href={`tel:${overlays.phoneNumber}`} class="phone-number">
                 <span class="material-symbols-outlined">call</span>
-                078949090
+                {overlays.phoneNumber}
             </a>
         </div>
     </div>
@@ -241,25 +244,22 @@ import mobileHighlights from "../content/mobileHighlights.json";
             <a href="javascript:history.back()" class="close-btn">&times;</a>
 
             <div class="popup-icon">
-                <span class="material-symbols-outlined">favorite</span>
+                <span class="material-symbols-outlined">{overlays.servicesPopup.icon}</span>
             </div>
 
-            <h2>Serviciile noastre</h2>
+            <h2>{overlays.servicesPopup.title}</h2>
 
             <div class="services-tags-container">
-                <span class="service-tag">Manichiură igienică și îngrijire profesională</span>
-                <span class="service-tag">Aplicare ojă semipermanentă sau gel rezistent</span>
-                <span class="service-tag">Design personalizat și nail art creativ după plac</span>
-                <span class="service-tag">Alungire unghii mărimile 1–5 cu formă perfectă</span>
-                <span class="service-tag">Tratament cu parafină și ritual SPA pentru mâini</span>
-
+                {overlays.servicesPopup.tags.map((tag) => (
+                        <span class="service-tag">{tag}</span>
+                ))}
             </div>
 
             <div class="interest-section">
-                <p>Ți-a stârnit interesul? Programează-te:</p>
-                <a href="tel:078949090" class="phone-number">
+                <p>{overlays.servicesPopup.interestText}</p>
+                <a href={`tel:${overlays.phoneNumber}`} class="phone-number">
                     <span class="material-symbols-outlined">call</span>
-                    078949090
+                    {overlays.phoneNumber}
                 </a>
             </div>
         </div>
@@ -271,8 +271,8 @@ import mobileHighlights from "../content/mobileHighlights.json";
         <div class="mascot-card">
 
             <div class="mascot-bubble">
-                Salut! Sunt Mihaela ♡<br>
-                Te aștept cu drag la mine în salon
+                {overlays.mascot.messageLine1}<br />
+                {overlays.mascot.messageLine2}
             </div>
 
             <div class="mascot-clip">

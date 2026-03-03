@@ -1,0 +1,29 @@
+{
+  "phoneNumber": "078949090",
+
+  "bookingPopup": {
+    "icon": "favorite",
+    "title": "Te așteptăm cu drag!",
+    "description": "Aștept un apel de la tine pentru a stabili toate detaliile."
+  },
+
+  "servicesPopup": {
+    "icon": "favorite",
+    "title": "Serviciile noastre",
+    "tags": [
+      "Manichiură igienică și îngrijire profesională",
+      "Aplicare ojă semipermanentă sau gel rezistent",
+      "Design personalizat și nail art creativ după plac",
+      "Alungire unghii mărimile 1–5 cu formă perfectă",
+      "Tratament cu parafină și ritual SPA pentru mâini"
+    ],
+    "interestText": "Ți-a stârnit interesul? Programează-te:"
+  },
+
+  "mascot": {
+    "name": "Mihaela",
+    "messageLine1": "Salut! Sunt Mihaela ♡",
+    "messageLine2": "Te aștept cu drag la mine în salon",
+    "delayMs": 2500
+  }
+}
