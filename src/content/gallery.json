@@ -1,0 +1,12 @@
+{
+  "sectionTitle": "Galerie Lucrări",
+  "sectionDescription": "Descoperă cele mai recente creații",
+  "images": [
+    { "id": "slide-1", "src": "/img/nails_1.jpg", "alt": "Nail Art 1" },
+    { "id": "slide-2", "src": "/img/nails_2.jpg", "alt": "Nail Art 2" },
+    { "id": "slide-3", "src": "/img/nails_3.jpg", "alt": "Nail Art 3" },
+    { "id": "slide-4", "src": "/img/nails_4.jpg", "alt": "Nail Art 4" },
+    { "id": "slide-5", "src": "/img/nails_5.jpg", "alt": "Nail Art 5" },
+    { "id": "slide-6", "src": "/img/nails_6.jpg", "alt": "Nail Art 6" }
+  ]
+}
