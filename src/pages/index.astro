@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import hero from "../content/hero.json";
 import pricing from "../content/pricing.json";
+import features from "../content/features.json";
 ---
 
 <BaseLayout title="Nail Studio | Manichiură Profesională">
@@ -49,8 +50,10 @@ import pricing from "../content/pricing.json";
                     <div class="hero-discovery-container">
                         <a href="#servicesPopup" class="discovery-btn" onclick="event.preventDefault(); location.hash='servicesPopup';">
                             <span>
-                                Descoperă serviciile noastre şi vezi ce ți se potrivește
-                                <span class="material-symbols-outlined">auto_awesome</span>
+                              {hero.buttonText}
+                                <span class="material-symbols-outlined">
+                                {hero.buttonIcon}
+                              </span>
                             </span>
                         </a>
                     </div>
@@ -84,45 +87,24 @@ import pricing from "../content/pricing.json";
         <section id="features" class="features">
             <div class="container">
                 <div class="features-header">
-                    <h2>Tot ce ai nevoie pentru unghii perfecte</h2>
-                    <p>De la manichiură clasică la design-uri artistice, fiecare detaliu este realizat cu grijă și pasiune.</p>
+                    <h2>{features.sectionTitle}</h2>
+                    <p>{features.sectionDescription}</p>
                 </div>
 
                 <div class="features-list">
+                    {features.items.map((item) => (
+                            <div class={`feature-card ${item.brandClass}`}>
+                                <div class="feature-text">
+                                    <span class="material-symbols-outlined icon">{item.icon}</span>
+                                    <h3>{item.title}</h3>
+                                    <p>{item.description}</p>
+                                </div>
 
-                    <div class="feature-card brand-red">
-                        <div class="feature-text">
-                            <span class="material-symbols-outlined icon">auto_awesome</span>
-                            <h3>Design-uri personalizate</h3>
-                            <p>Modele unice, adaptate stilului tău, de la minimalist la nail art complex și spectaculos.</p>
-                        </div>
-                        <div class="feature-image-placeholder">
-                            <img src="img/features_1.png" alt="Design creativ" class="feature-img">
-                        </div>
-                    </div>
-
-                    <div class="feature-card brand-blue">
-                        <div class="feature-text">
-                            <span class="material-symbols-outlined icon">verified</span>
-                            <h3>Rezistență și calitate</h3>
-                            <p>Produse premium și tehnici profesionale pentru o manichiură care arată impecabil mult timp.</p>
-                        </div>
-                        <div class="feature-image-placeholder">
-                            <img src="img/features_2.png" alt="Calitate premium" class="feature-img">
-                        </div>
-                    </div>
-
-                    <div class="feature-card brand-pink">
-                        <div class="feature-text">
-                            <span class="material-symbols-outlined icon">spa</span>
-                            <h3>Relaxare totală</h3>
-                            <p>Atmosferă plăcută, cafea, gustări și momente de răsfăț în timp ce ai grijă de tine.</p>
-                        </div>
-                        <div class="feature-image-placeholder">
-                            <img src="img/features_3.png" alt="Relaxare" class="feature-img">
-                        </div>
-                    </div>
-
+                                <div class="feature-image-placeholder">
+                                    <img src={item.image} alt={item.alt} class="feature-img" />
+                                </div>
+                            </div>
+                    ))}
                 </div>
             </div>
         </section>

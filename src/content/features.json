@@ -1,0 +1,30 @@
+{
+  "sectionTitle": "Tot ce ai nevoie pentru unghii perfecte",
+  "sectionDescription": "De la manichiură clasică la design-uri artistice, fiecare detaliu este realizat cu grijă și pasiune.",
+  "items": [
+    {
+      "brandClass": "brand-red",
+      "icon": "auto_awesome",
+      "title": "Design-uri personalizate",
+      "description": "Modele unice, adaptate stilului tău, de la minimalist la nail art complex și spectaculos.",
+      "image": "/img/features_1.png",
+      "alt": "Design creativ"
+    },
+    {
+      "brandClass": "brand-blue",
+      "icon": "verified",
+      "title": "Rezistență și calitate",
+      "description": "Produse premium și tehnici profesionale pentru o manichiură care arată impecabil mult timp.",
+      "image": "/img/features_2.png",
+      "alt": "Calitate premium"
+    },
+    {
+      "brandClass": "brand-pink",
+      "icon": "spa",
+      "title": "Relaxare totală",
+      "description": "Atmosferă plăcută, cafea, gustări și momente de răsfăț în timp ce ai grijă de tine.",
+      "image": "/img/features_3.png",
+      "alt": "Relaxare"
+    }
+  ]
+}
