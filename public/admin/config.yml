@@ -1,0 +1,195 @@
+backend:
+  name: github
+  repo: mariaelenabotnari/tum-web-lab4
+  branch: feature/content-structure
+
+local_backend: true
+
+media_folder: "public/img"
+public_folder: "/img"
+
+collections:
+  - name: "content"
+    label: "Site Content"
+    files:
+      # HERO
+      - label: "Hero"
+        name: "hero"
+        file: "src/content/hero.json"
+        fields:
+          - { label: "Title line 1", name: "titleLine1", widget: "string" }
+          - { label: "Title line 2", name: "titleLine2", widget: "string" }
+          - { label: "Title line 3", name: "titleLine3", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - { label: "Button text", name: "buttonText", widget: "string" }
+          - { label: "Button icon", name: "buttonIcon", widget: "string" }
+          - label: "Image"
+            name: "image"
+            widget: "object"
+            fields:
+              - { label: "Src", name: "src", widget: "string" }
+              - { label: "Alt", name: "alt", widget: "string" }
+
+      # HEADER / NAVBAR + MOBILE CALL BUTTON
+      - label: "Header"
+        name: "header"
+        file: "src/content/header.json"
+        fields:
+          - { label: "Phone number", name: "phoneNumber", widget: "string" }
+          - { label: "CTA text", name: "ctaText", widget: "string" }
+
+          - label: "Brand"
+            name: "brand"
+            widget: "object"
+            fields:
+              - { label: "Logo src", name: "logoSrc", widget: "string" }
+              - { label: "Logo alt", name: "logoAlt", widget: "string" }
+
+          - label: "Mobile call button"
+            name: "mobileCall"
+            widget: "object"
+            fields:
+              - { label: "Icon class", name: "iconClass", widget: "string" }
+              - { label: "Text", name: "text", widget: "string" }
+
+          - label: "Nav links"
+            name: "navLinks"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Href", name: "href", widget: "string" }
+
+      # MOBILE HIGHLIGHTS
+      - label: "Mobile Highlights"
+        name: "mobileHighlights"
+        file: "src/content/mobileHighlights.json"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Icon", name: "icon", widget: "string" }
+              - { label: "Text", name: "text", widget: "string" }
+
+      # FEATURES
+      - label: "Features"
+        name: "features"
+        file: "src/content/features.json"
+        fields:
+          - { label: "Section title", name: "sectionTitle", widget: "string" }
+          - { label: "Section description", name: "sectionDescription", widget: "string" }
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Brand class", name: "brandClass", widget: "string" }
+              - { label: "Icon", name: "icon", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "string" }
+              - { label: "Image", name: "image", widget: "string" }
+              - { label: "Alt", name: "alt", widget: "string" }
+
+      # PORTFOLIO (GALLERY)
+      - label: "Portfolio"
+        name: "gallery"
+        file: "src/content/gallery.json"
+        fields:
+          - { label: "Section title", name: "sectionTitle", widget: "string" }
+          - { label: "Section description", name: "sectionDescription", widget: "string" }
+          - label: "Images"
+            name: "images"
+            widget: "list"
+            fields:
+              - { label: "Id", name: "id", widget: "string" }
+              - { label: "Src", name: "src", widget: "string" }
+              - { label: "Alt", name: "alt", widget: "string" }
+
+      # PRICING
+      - label: "Pricing"
+        name: "pricing"
+        file: "src/content/pricing.json"
+        fields:
+          - { label: "Section title", name: "sectionTitle", widget: "string" }
+          - { label: "Section description", name: "sectionDescription", widget: "string" }
+          - label: "Categories"
+            name: "categories"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Icon", name: "icon", widget: "string" }
+              - { label: "Color", name: "color", widget: "string" }
+              - label: "Services"
+                name: "services"
+                widget: "list"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Price", name: "price", widget: "string" }
+
+      # FOOTER
+      - label: "Footer"
+        name: "footer"
+        file: "src/content/footer.json"
+        fields:
+          - label: "Logo"
+            name: "logo"
+            widget: "object"
+            fields:
+              - { label: "Src", name: "src", widget: "string" }
+              - { label: "Alt", name: "alt", widget: "string" }
+
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Nav title", name: "navTitle", widget: "string" }
+
+          - label: "Links"
+            name: "links"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Href", name: "href", widget: "string" }
+
+          - { label: "Booking title", name: "bookingTitle", widget: "string" }
+          - { label: "Location", name: "location", widget: "string" }
+          - { label: "Booking button text", name: "bookingButtonText", widget: "string" }
+          - { label: "Copyright", name: "copyright", widget: "string" }
+
+      # POPUPS + MASCOT (OVERLAYS)
+      - label: "Overlays"
+        name: "overlays"
+        file: "src/content/overlays.json"
+        fields:
+          - { label: "Phone number", name: "phoneNumber", widget: "string" }
+
+          - label: "Booking popup"
+            name: "bookingPopup"
+            widget: "object"
+            fields:
+              - { label: "Icon", name: "icon", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "string" }
+
+          - label: "Services popup"
+            name: "servicesPopup"
+            widget: "object"
+            fields:
+              - { label: "Icon", name: "icon", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - label: "Tags"
+                name: "tags"
+                widget: "list"
+                field: { label: "Tag", name: "tag", widget: "string" }
+              - { label: "Interest text", name: "interestText", widget: "string" }
+
+          - label: "Mascot"
+            name: "mascot"
+            widget: "object"
+            fields:
+              - { label: "Message line 1", name: "messageLine1", widget: "string" }
+              - { label: "Message line 2", name: "messageLine2", widget: "string" }
+
+          - label: "Frames"
+            name: "frames"
+            widget: "object"
+            fields:
+              - { label: "Frame 1 src", name: "frame1Src", widget: "string" }
+              - { label: "Frame 2 src", name: "frame2Src", widget: "string" }
+              - { label: "Alt", name: "alt", widget: "string" }
