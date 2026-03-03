@@ -9,5 +9,10 @@
   "bookingTitle": "Programări",
   "location": "Chișinău, Moldova",
   "bookingButtonText": "Programează-te",
-  "copyright": "© 2026 Your Perfect Nails — Toate drepturile rezervate."
+  "copyright": "© 2026 Your Perfect Nails — Toate drepturile rezervate.",
+
+  "logo": {
+    "src": "/img/logo_v2.png",
+    "alt": "logo"
+  }
 }

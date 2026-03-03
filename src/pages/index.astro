@@ -21,7 +21,7 @@ import overlays from "../content/overlays.json";
             <div class="container nav-mobile-row">
 
                 <a class="navbar-brand" href="#">
-                    <img src="/img/logo.png" class="logo-img" alt="Your Perfect Nails" />
+                    <img src={header.brand.logoSrc} class="logo-img" alt={header.brand.logoAlt} />
                 </a>
 
                 <ul class="nav-links nav-mobile-links">
@@ -70,7 +70,7 @@ import overlays from "../content/overlays.json";
                 </div>
 
                 <div class="hero-image-wrapper">
-                    <img src="img/hero_section_img.png" alt="Nail Art Preview" class="hero-img">
+                    <img src={hero.image.src} alt={hero.image.alt} class="hero-img" />
                 </div>
             </div>
         </section>
@@ -184,7 +184,7 @@ import overlays from "../content/overlays.json";
         <div class="container footer-grid">
             <div class="footer-column brand-info">
                 <a href="#" class="footer-logo-text">
-                    <img src="/img/logo_v2.png" alt="logo" />
+                    <img src={footer.logo.src} alt={footer.logo.alt} />
                 </a>
                 <p class="brand-tagline">{footer.tagline}</p>
             </div>
@@ -205,9 +205,8 @@ import overlays from "../content/overlays.json";
                     <p>{footer.location}</p>
                 </div>
                 <a
-                        href="#bookingPopup"
+                        href={`tel:${header.phoneNumber}`}
                         class="btn-footer btn-book"
-                        onclick="event.preventDefault(); location.hash='bookingPopup';"
                 >
                     {footer.bookingButtonText}
                 </a>
@@ -276,8 +275,8 @@ import overlays from "../content/overlays.json";
             </div>
 
             <div class="mascot-clip">
-                <img class="mascot-frame frame-1" src="img/mascot_initial_position.png" alt="">
-                <img class="mascot-frame frame-2" src="img/mascot_second_position.png" alt="">
+                <img class="mascot-frame frame-1" src={overlays.frames.frame1Src} alt={overlays.frames.alt} />
+                <img class="mascot-frame frame-2" src={overlays.frames.frame2Src} alt={overlays.frames.alt} />
             </div>
 
         </div>

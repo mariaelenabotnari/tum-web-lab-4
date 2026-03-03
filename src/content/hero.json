@@ -4,5 +4,10 @@
   "titleLine3": "perfecțiune",
   "description": "Manichiură profesională, design-uri creative și răsfăț total.",
   "buttonText": "Descoperă serviciile noastre şi vezi ce ți se potrivește",
-  "buttonIcon": "auto_awesome"
+  "buttonIcon": "auto_awesome",
+
+  "image": {
+    "src": "/img/hero_section_img.png",
+    "alt": "Nail Art Preview"
+  }
 }

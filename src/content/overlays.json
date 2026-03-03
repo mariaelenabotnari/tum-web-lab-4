@@ -25,5 +25,11 @@
     "messageLine1": "Salut! Sunt Mihaela ♡",
     "messageLine2": "Te aștept cu drag la mine în salon",
     "delayMs": 2500
+  },
+
+  "frames": {
+    "frame1Src": "/img/mascot_initial_position.png",
+    "frame2Src": "/img/mascot_second_position.png",
+    "alt": ""
   }
 }
