@@ -4,17 +4,35 @@
   "categories": [
     {
       "title": "Manichiură & Îngrijire",
-      "enabled": true,
+      "enabled": false,
       "color": "#090825",
       "icon": "front_hand",
       "borderAlpha": 0.12,
       "services": [
-        { "name": "Clasică (ojă)", "price": "150 lei" },
-        { "name": "Manichiură aparat", "price": "150 lei" },
-        { "name": "Manichiură igienică", "price": "150 lei" },
-        { "name": "Pentru bărbați", "price": "180 lei" },
-        { "name": "Parafinoterapie", "price": "100 lei" },
-        { "name": "Mini-SPA mâini", "price": "25 lei" }
+        {
+          "name": "Clasică (ojă)",
+          "price": "150 lei"
+        },
+        {
+          "name": "Manichiură aparat",
+          "price": "150 lei"
+        },
+        {
+          "name": "Manichiură igienică",
+          "price": "150 lei"
+        },
+        {
+          "name": "Pentru bărbați",
+          "price": "180 lei"
+        },
+        {
+          "name": "Parafinoterapie",
+          "price": "100 lei"
+        },
+        {
+          "name": "Mini-SPA mâini",
+          "price": "25 lei"
+        }
       ]
     },
     {
@@ -24,13 +42,34 @@
       "icon": "palette",
       "borderAlpha": 0.18,
       "services": [
-        { "name": "Acoperire ojă-gel", "price": "200 lei" },
-        { "name": "Acoperire gel", "price": "280 lei" },
-        { "name": "Corecție ojă-gel", "price": "220 lei" },
-        { "name": "Corecție gel (+igienică)", "price": "400 lei" },
-        { "name": "Corecție gel (fără ig.)", "price": "330 lei" },
-        { "name": "Art-Design / Restaurare", "price": "30–50 lei" },
-        { "name": "Îndepărtare gel", "price": "70 lei" }
+        {
+          "name": "Acoperire ojă-gel",
+          "price": "200 lei"
+        },
+        {
+          "name": "Acoperire gel",
+          "price": "280 lei"
+        },
+        {
+          "name": "Corecție ojă-gel",
+          "price": "220 lei"
+        },
+        {
+          "name": "Corecție gel (+igienică)",
+          "price": "400 lei"
+        },
+        {
+          "name": "Corecție gel (fără ig.)",
+          "price": "330 lei"
+        },
+        {
+          "name": "Art-Design / Restaurare",
+          "price": "30–50 lei"
+        },
+        {
+          "name": "Îndepărtare gel",
+          "price": "70 lei"
+        }
       ]
     },
     {
@@ -40,10 +79,22 @@
       "icon": "architecture",
       "borderAlpha": 0.18,
       "services": [
-        { "name": "Mărimea 1 & 2", "price": "350 lei" },
-        { "name": "Mărimea 3", "price": "400 lei" },
-        { "name": "Mărimea 4", "price": "450 lei" },
-        { "name": "Mărimea 5", "price": "500 lei" }
+        {
+          "name": "Mărimea 1 & 2",
+          "price": "350 lei"
+        },
+        {
+          "name": "Mărimea 3",
+          "price": "400 lei"
+        },
+        {
+          "name": "Mărimea 4",
+          "price": "450 lei"
+        },
+        {
+          "name": "Mărimea 5",
+          "price": "500 lei"
+        }
       ],
       "note": {
         "left": "Calitate Premium",
