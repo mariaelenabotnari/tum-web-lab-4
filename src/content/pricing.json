@@ -4,7 +4,7 @@
   "categories": [
     {
       "title": "Manichiură & Îngrijire",
-      "enabled": false,
+      "enabled": true,
       "color": "#090825",
       "icon": "front_hand",
       "borderAlpha": 0.12,
