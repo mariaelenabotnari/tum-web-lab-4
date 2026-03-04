@@ -4,6 +4,7 @@
   "categories": [
     {
       "title": "Manichiură & Îngrijire",
+      "enabled": true,
       "color": "#090825",
       "icon": "front_hand",
       "borderAlpha": 0.12,
@@ -18,6 +19,7 @@
     },
     {
       "title": "Acoperire & Stil",
+      "enabled": true,
       "color": "#6475E9",
       "icon": "palette",
       "borderAlpha": 0.18,
@@ -33,6 +35,7 @@
     },
     {
       "title": "Alungire Unghii",
+      "enabled": true,
       "color": "#ff7956",
       "icon": "architecture",
       "borderAlpha": 0.18,
@@ -42,7 +45,10 @@
         { "name": "Mărimea 4", "price": "450 lei" },
         { "name": "Mărimea 5", "price": "500 lei" }
       ],
-      "note": { "left": "Calitate Premium", "right": "Inclusă" }
+      "note": {
+        "left": "Calitate Premium",
+        "right": "Inclusă"
+      }
     }
   ]
 }
