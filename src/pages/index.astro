@@ -8,6 +8,15 @@ import footer from "../content/footer.json";
 import header from "../content/header.json";
 import mobileHighlights from "../content/mobileHighlights.json";
 import overlays from "../content/overlays.json";
+
+const visibleCategories = pricing.categories.filter((c) => c.enabled !== false);
+
+const colClass =
+    visibleCategories.length === 1
+        ? "col-12 col-lg-6"
+        : visibleCategories.length === 2
+            ? "col-12 col-md-6 col-lg-5"
+            : "col-12 col-lg-4";
 ---
 
 <BaseLayout title="Nail Studio | Manichiură Profesională">
@@ -140,8 +149,10 @@ import overlays from "../content/overlays.json";
             </div>
         </section>
 
+
         <section id="pricing" class="py-5" style="background:#eeedec; scroll-margin-top:100px;">
             <div class="container">
+
                 <div class="text-center mb-5">
                     <h2 style="font-size:2.5rem; color:#090825;">
                         {pricing.sectionTitle}
@@ -149,35 +160,40 @@ import overlays from "../content/overlays.json";
                     <p>{pricing.sectionDescription}</p>
                 </div>
 
-                <div class="row g-4">
-                    {pricing.categories
-                        .filter((category) => category.enabled !== false)
-                        .map((category) => (
-                                <div class="col-12 col-lg-4">
-                                    <div class="h-100 p-4 rounded-4 text-white"
-                                         style={`background:${category.color};`}>
+                <div class="row g-4 justify-content-center">
 
-                                        <div class="d-flex align-items-center gap-3 pb-3 mb-4"
-                                             style="border-bottom:1px solid rgba(255,255,255,0.18);">
-                                                <span class="material-symbols-outlined"
-                                                      style="font-size:2.5rem;">
-                                                    {category.icon}
-                                                </span>
-                                                <h3 class="h5 fw-semibold m-0">
-                                                    {category.title}
-                                                </h3>
-                                        </div>
+                    {visibleCategories.map((category) => (
+                            <div class={colClass}>
+                                <div class="h-100 p-4 rounded-4 text-white"
+                                     style={`background:${category.color};`}>
 
-                                        <ul class="list-unstyled m-0">
-                                            {category.services.map((service) => (
-                                                    <li class="d-flex justify-content-between mb-3">
-                                                        <span>{service.name}</span>
-                                                        <span class="fw-semibold">{service.price}</span>
-                                                    </li>))}
-                                        </ul>
+                                    <div class="d-flex align-items-center gap-3 pb-3 mb-4"
+                                         style="border-bottom:1px solid rgba(255,255,255,0.18);">
+
+                            <span class="material-symbols-outlined"
+                                  style="font-size:2.5rem;">
+                                {category.icon}
+                            </span>
+
+                                        <h3 class="h5 fw-semibold m-0">
+                                            {category.title}
+                                        </h3>
+
                                     </div>
+
+                                    <ul class="list-unstyled m-0">
+                                        {category.services.map((service) => (
+                                                <li class="d-flex justify-content-between mb-3">
+                                                    <span>{service.name}</span>
+                                                    <span class="fw-semibold">{service.price}</span>
+                                                </li>
+                                        ))}
+                                    </ul>
+
                                 </div>
-                        ))}
+                            </div>
+                    ))}
+
                 </div>
             </div>
         </section>
