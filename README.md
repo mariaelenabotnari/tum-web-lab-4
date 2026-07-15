@@ -1,8 +1,6 @@
-# Laboratory Work 4
-
 ## 1. Introduction
 
-This laboratory work focused on improving a static landing page by introducing a modern development workflow based on a static site framework, a Git-based content management system (CMS), and automated deployment.
+This project focused on improving a static landing page by introducing a modern development workflow based on a static site framework, a Git-based content management system (CMS), and automated deployment.
 
 The goal was to transform a traditional static website where all content was embedded directly in HTML files into a more maintainable architecture where the content is stored separately and can be edited through a CMS interface.
 
